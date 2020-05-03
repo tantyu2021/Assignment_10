@@ -8,7 +8,30 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   	<script>
-		// WRITE YOUR CODE HERE
+		// WRITE YOUR CODE HERE - load
+var $ = function (id) { //helps take DOM element
+    "use strict";
+    return window.document.getElementById(id);
+};
+window.addEventListener('load', function(e) {
+    "use strict";
+    var xhr = new XMLHttpRequest();
+    var file = e.currentTarget.id;
+    xhr.open('GET', file + 'html');
+    xhr.addEventListener('readystatechange', function () {
+        if (xhr.status === 200) {
+            window.document.querySelector('#solution').innerHTML = xhr.responseText;
+        }
+    }); 
+
+});   
+    window.addEventListener('load', function() { 
+        'use strict';
+        $('vprospect').addEventListener('click', loadHtml);
+        $('vconvert').addEventListener('click', loadHtml);
+        $('vretain').addEventListener('click', loadHtml);
+   
+});
     </script>
 </head>
 
