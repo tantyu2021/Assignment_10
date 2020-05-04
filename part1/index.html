@@ -7,7 +7,7 @@
     <link href="styles.css" rel="stylesheet">
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>  53_cdn-->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- -->
+ <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  -->
 
   	<script>
 		// WRITE YOUR CODE HERE - load
@@ -24,10 +24,16 @@ window.addEventListener('load', function(e) {
     }); 
 
 });   
+var $ = function (id) { //helps take DOMelement
+    "use strict";
+    return window.document.getElementById(id);
+};
+
     window.addEventListener('load', function() { 
         'use strict';
-        $('vprospect').addEventListener('click', load("solutions.html #vprospect"));
-        $('vconvert').addEventListener('click', loadHtml);
+        //document.getElementById
+        $('vprospect').addEventListener('click', loadHtml); // "solutions.html #vprospect"
+        $('vconvert').addEventListener('click', loadHtml);//load Html undefined
         $('vretain').addEventListener('click', loadHtml);
    
 });
