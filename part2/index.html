@@ -18,7 +18,8 @@ window.addEventListener('load', function() {
     var xhr, xmlDoc, team, i;
 
     xhr = new XMLHttpRequest();  //new instance for HTMLdocument
-    xhr.open('GET', 'data/team.xml');
+   // xhr.open('GET', 'data/team.xml');
+    xhr.open('GET', 'team.xml');
     xhr.send(); //52-53 - refused load
     xhr.addEventListener('readystatechange', function() { //inVideo: xhr.onreadystatechange = function() {
 //if (xhr.readyState === 4 && xhr.status === 200) {

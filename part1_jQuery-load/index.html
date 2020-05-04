@@ -5,33 +5,24 @@
     <title>Welcome to Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
-    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  53_cdn-->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- -->
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script>
+   $(function() {
+       $("#vprospect").click(function() {
+           $("#solution").load("solutions.html #vprospect");
+       });
+       $("#vconvert").click(function() {
+           $("#solution").load("solutions.html #vconvert");
+       });
+       $("#vretain").click(function() {
+           $("#solution").load("solutions.html #vretain");
+       });
+   });
+</script>
 
-  	<script>
-		// WRITE YOUR CODE HERE - load
 
-window.addEventListener('load', function(e) {
-    "use strict";
-    var xhr = new XMLHttpRequest();
-    var file = e.currentTarget.id;
-    xhr.open('GET', file + 'html');
-    xhr.addEventListener('readystatechange', function () {
-        if (xhr.status === 200) {
-            window.document.querySelector('#solution').innerHTML = xhr.responseText;
-        }
-    }); 
-
-});   
-    window.addEventListener('load', function() { 
-        'use strict';
-        $('vprospect').addEventListener('click', load("solutions.html #vprospect"));
-        $('vconvert').addEventListener('click', loadHtml);
-        $('vretain').addEventListener('click', loadHtml);
-   
-});
-    </script>
 </head>
 
 <body>
