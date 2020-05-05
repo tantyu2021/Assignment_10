@@ -5,19 +5,20 @@
     <title>Welcome to Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
-    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN.
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 	    <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
         $(function() {
             $.ajax({
+                // url: 'file:///home/satendra/dndExamples/avisDnD/employees.json',
                 type: "get",
                // url: "data/team.xml",
                 url: "employees.json",
                 beforeSend: function() {
                    // $("#team").html("Loading...");
-                    $("#team").html("Loading...");
+                    $("#result").html("Loading...");
                 },
                 timeout: 10000,
                 //dataType: "xml"
@@ -25,7 +26,7 @@
             }).done(function (data) {
                 $('#result').html('');
                 $(data).find("management").children().each(function() {
-                    $("#team").append("<b>" + 
+                    $("#result").append("<b>" + 
                         $(this).find('name').text() + "</b><br>" + 
                         $(this).find('title').text() + "<br>" + 
                         $(this).find('bio').text() + "<br><br>");
@@ -54,7 +55,7 @@
     <section id="content">
         <h2>The Vecta Corp. Management Team</h2>
 
-        <div id="team"></div>
+      
         <div id="result"></div>
     </section>
     

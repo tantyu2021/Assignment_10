@@ -5,8 +5,8 @@
     <title>Welcome to Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
-    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN.
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 	 <!-- jQuery library -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script>
@@ -15,7 +15,7 @@
  
              $.each(data, function() {
                  $.each(this, function(key, value) {
-                     $("#team").append(
+                     $("#result").append(
                          value.name + '<br>' + value.title + '<br>' + value.bio + '<br><br>'
                      );
                  });
@@ -23,6 +23,7 @@
  
          });
      });
+
      </script>
 </head>
 
@@ -43,8 +44,8 @@
     <section id="content">
         <h2>The Vecta Corp. Management Team</h2>
 
-        <div id="team"></div>
-       <!-- <div id="result"></div>-->
+        
+       <div id="result"></div>
     </section>
     
     <footer></footer>
