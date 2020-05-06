@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Vecta Corp.</title>
+    <title>JS JSON(). Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
-    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. 
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>-->
 	<script>
 		// WRITE YOUR CODE HERE - the jQuery .getJSON() Shorthand Method
 var $ = function (id) { //helps take DOM element
@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
     var xhr, jsonDoc, team, i;
 
     xhr = new XMLHttpRequest();  //new instance for HTMLdocument
-    xhr.open('GET', 'data/team.json');
+    xhr.open('GET', 'team.json');
     xhr.send(); //52-53 - refused load
     xhr.addEventListener('readystatechange', function() { 
 //inVideo: xhr.onreadystatechange = function() {

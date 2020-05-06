@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Vecta Corp.</title>
+    <title>JS Load(). Vecta Corp.</title>
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. 
@@ -11,19 +11,28 @@
 
   	<script>
 		// WRITE YOUR CODE HERE - load
-
-window.addEventListener('load', function(e) {
-    "use strict";
+var loadHtml = function(e) {
     var xhr = new XMLHttpRequest();
     var file = e.currentTarget.id;
     xhr.open('GET', file + 'html');
+   xhr.send();//faild to load
     xhr.addEventListener('readystatechange', function () {
         if (xhr.status === 200) {
             window.document.querySelector('#solution').innerHTML = xhr.responseText;
         }
     }); 
-
-});   
+}
+// window.addEventListener('load', function(e) {
+//     "use strict";
+//     var xhr = new XMLHttpRequest();
+//     var file = e.currentTarget.id;
+//     xhr.open('GET', file + 'html');
+//     xhr.addEventListener('readystatechange', function () {
+//         if (xhr.status === 200) {
+//             window.document.querySelector('#solution').innerHTML = xhr.responseText;
+//         }
+//     }); 
+// });   
 var $ = function (id) { //helps take DOMelement
     "use strict";
     return window.document.getElementById(id);
@@ -32,8 +41,8 @@ var $ = function (id) { //helps take DOMelement
     window.addEventListener('load', function() { 
         'use strict';
         //document.getElementById
-        $('vprospect').addEventListener('click', loadHtml); // "solutions.html #vprospect"
-        $('vconvert').addEventListener('click', loadHtml);//load Html undefined
+        $('vprospect').addEventListener('click', loadHtml);
+        $('vconvert').addEventListener('click', loadHtml);
         $('vretain').addEventListener('click', loadHtml);
    
 });
@@ -41,6 +50,25 @@ var $ = function (id) { //helps take DOMelement
 // function load_sol(){
 //             document.getElementById("content").innerHTML='<object type="text/html" data="solution.html" ></object>';
 //   }
+//https://stackoverflow.com/questions/17901116/i-need-the-equivalent-of-load-to-js
+// document.addEventListener('DOMContentLoaded', function () {
+//             document.getElementById('a').addEventListener('click', function (e) {
+//                 e.preventDefault();
+
+//                 var div = document.createElement('div');
+//                 div.id = 'b';
+//                 document.body.appendChild(div);
+
+//                 var xhr = new XMLHttpRequest();
+
+//                 xhr.onload = function () {
+//                     div.innerHTML = this.response;
+//                 };
+
+//                 xhr.open('GET', 'solution.html', true);
+//                 xhr.send();//doesnt like send() method
+//             }, false);
+//         }, false);
     </script>
 </head>
 
@@ -57,7 +85,6 @@ var $ = function (id) { //helps take DOMelement
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
-    
     <section id="content">
         <h2>Our Solutions</h2>
         <p>Which Vecta Corp. solution are you interested in learning about?</p>
@@ -65,7 +92,10 @@ var $ = function (id) { //helps take DOMelement
         <a id="vconvert" href="#">vConvert 2.0</a> | 
         <a id="vretain" href="#">vRetain 1.0</a>
         <br>
-		<div id="solution"></div>
+        <div id="solution"></div>
+        
+                    <!-- https://stackoverflow.com/questions/17901116/i-need-the-equivalent-of-load-to-js -->
+    <!-- <a id="a" href="#">load</a> -->
     </section>
     
     <footer>
